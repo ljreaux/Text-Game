@@ -1,0 +1,17 @@
+{
+  "name": "text-game",
+  "version": "1.0.0",
+  "description": "A text based adventure game in Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Larry Reaux",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-art": "^2.8.5",
+    "chalk": "^5.3.0",
+    "inquirer": "^9.2.16"
+  },
+  "type": "module"
+}
