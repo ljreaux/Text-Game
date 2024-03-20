@@ -2,8 +2,7 @@
 
 import inquirer from "inquirer";
 import chalk from "chalk";
-import { scenarios, introText } from "./scenarios.js";
-import Art from "ascii-art";
+import { scenarios} from "./scenarios.js";
 
 const handleColors = (scenario) => {
   const { colors, message, choices } = scenario;
@@ -21,9 +20,7 @@ const handleColors = (scenario) => {
 
 // Function to present a scenario and get player choice
 const presentScenario = async (scenario) => {
-  console.log(introText);
-  const art = await Art.font("Some Text", "u:<utf default>", true).completed();
-  console.log(art);
+
   handleColors(scenario);
 
   const answers = await inquirer.prompt([
