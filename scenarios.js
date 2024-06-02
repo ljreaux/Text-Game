@@ -21,9 +21,7 @@ export const scenarios = [
   {
     name: "intro",
     message: introText,
-    choices: [
-      {name: "start game", nextScenario: "startGame"}
-    ]
+    choices: [{ name: "start game", nextScenario: "startGame" }],
   },
   {
     name: "startGame",
