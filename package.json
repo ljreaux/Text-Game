@@ -1,8 +1,8 @@
 {
-  "name": "text-game",
+  "name": "times-echo",
   "version": "1.0.0",
   "description": "A text based adventure game in Node",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",
@@ -16,8 +16,6 @@
   "author": "Larry Reaux",
   "license": "ISC",
   "dependencies": {
-    "@types/figlet": "^1.5.8",
-    "@types/gradient-string": "^1.1.6",
     "chalk": "^5.3.0",
     "figlet": "^1.7.0",
     "gradient-string": "^2.0.2",
@@ -27,6 +25,8 @@
   "type": "module",
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
+    "@types/figlet": "^1.5.8",
+    "@types/gradient-string": "^1.1.6",
     "typescript": "^5.4.5"
   }
 }

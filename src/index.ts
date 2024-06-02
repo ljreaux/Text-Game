@@ -62,7 +62,7 @@ const startGame = async () => {
   // Print a thank-you message when the game ends
   console.log(chalk.greenBright("Thanks for playing! Goodbye."));
 };
-figlet("Text Game!", (err, data) => {
+figlet("Time's Echo", (err, data) => {
   if (err) {
     console.error("Something went wrong...");
   }
