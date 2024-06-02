@@ -1,4 +1,6 @@
-import chalk from "chalk";
+import chalk, { ChalkInstance, ForegroundColorName } from "chalk";
+import figlet from "figlet";
+import gradient from "gradient-string";
 
 const introText = `
 As you awaken from a restless slumber, your surroundings feel unfamiliar. The air is thick with an eerie silence, broken only by the faint humming of machinery. Blinking away the haze of confusion, you find yourself in a dimly lit chamber adorned with intricate symbols and mysterious devices.
@@ -10,14 +12,24 @@ Before you stretches a machine unlike any you've seen before, its metallic frame
 Gathering your wits, you understand the gravity of your situation. You stand at the threshold of an adventure that spans the annals of time itself. With the fabric of reality at your fingertips, the choices you make will shape the course of history.
 `;
 
-const standardColors = {
+const standardColors: Partial<ScenarioType> = {
   colors: {
     message: "greenBright",
     choices: ["cyan", "yellow"],
   },
 };
 
-export const scenarios = [
+export interface ScenarioType {
+  name: string;
+  message: string;
+  choices: Array<{ name: string; nextScenario: string }>;
+  colors?: {
+    message?: ForegroundColorName;
+    choices?: ForegroundColorName[];
+  };
+}
+
+export const scenarios: ScenarioType[] = [
   {
     name: "intro",
     message: introText,
@@ -81,7 +93,7 @@ export const scenarios = [
       "You shift your focus to the intricate controls of the time machine, its array of buttons, levers, and cryptic symbols beckoning your attention. With a sense of determination, you begin to decipher the functions of each element, hoping to unravel the mysteries concealed within the console.",
     choices: [{ name: "continue", nextScenario: "continueExamine" }],
     colors: {
-      colors: ["greenBright"],
+      choices: ["greenBright"],
     },
   },
   {
