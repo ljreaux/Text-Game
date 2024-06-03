@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // thanks to https://dev.to/shawn2208/simple-text-based-adventure-game-in-nodejs-490j for the original idea
 
 import inquirer from "inquirer";

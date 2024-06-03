@@ -1,6 +1,4 @@
-import chalk, { ChalkInstance, ForegroundColorName } from "chalk";
-import figlet from "figlet";
-import gradient from "gradient-string";
+import chalk, { ForegroundColorName } from "chalk";
 
 const introText = `
 As you awaken from a restless slumber, your surroundings feel unfamiliar. The air is thick with an eerie silence, broken only by the faint humming of machinery. Blinking away the haze of confusion, you find yourself in a dimly lit chamber adorned with intricate symbols and mysterious devices.
@@ -86,6 +84,42 @@ export const scenarios: ScenarioType[] = [
       { name: "traverse the shadowy corridor", nextScenario: "corridor" },
     ],
     ...standardColors,
+  },
+  {
+    name: "corridor",
+    message: `
+    Feeling a sense of unease creeping over you, you opt to traverse the shadowy corridor to the right, drawn by the allure of the unknown and the mysteries it may hold. With a wary glance over your shoulder, you steel yourself for whatever dangers may lie ahead, prepared to confront the darkness head-on.
+    `,
+    choices: [{ name: "continue", nextScenario: "corridorContinue" }],
+    colors: {
+      message: "greenBright",
+    },
+  },
+  {
+    name: "corridorContinue",
+    message: `As you move through the shadowy corridor, the darkness seems to deepen, and the air grows colder. Suddenly, you hear a faint rustling sound behind you. Turning quickly, you catch a glimpse of a shadowy figure darting out of sight. Heart pounding, you continue forward, eventually emerging into a large, cavernous hall. The hall is empty, save for a single glowing orb suspended in midair. This orb might be a key to understanding the nature of this place or a tool to aid your escape.`,
+    choices: [{ name: "investigate the orb", nextScenario: "investigateOrb" }],
+    colors: {},
+  },
+  {
+    name: "dimPath",
+    message: `
+    Intrigued by the faint glow emanating from the left passage, you decide to follow the dimly lit path, drawn to the promise of illumination amidst the darkness. With cautious steps, you press onward, your senses alert for any signs of danger or discovery.
+    `,
+    choices: [{ name: "continue", nextScenario: "dimPathCont" }],
+    colors: {
+      message: "greenBright",
+    },
+  },
+  {
+    name: "dimPathCont",
+    message: `
+    As you proceed down the dimly lit path, the light grows brighter, revealing a hidden chamber filled with ancient artifacts and manuscripts. The air is thick with dust, and the walls are lined with shelves holding countless tomes. At the center of the room, a pedestal holds a large, ornate book, its cover adorned with the same symbols you saw earlier. This book could hold the knowledge you need to understand the time machine and your predicament.
+    `,
+    choices: [{ name: "investigate the book", nextScenario: "ancientBook" }],
+    colors: {
+      message: "greenBright",
+    },
   },
   {
     name: "examineControls",
